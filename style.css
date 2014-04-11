@@ -24,11 +24,6 @@ ul{
 	text-decoration:none;
 	margin:0px;
 	padding:0px;
-	-webkit-margin-before: 1em;
-	-webkit-margin-after: 1em;	
-	-webkit-margin-start: 0px;
-	-webkit-margin-end: 0px;
-	-webkit-padding-start: 40px;
 }
 ul li{	
 	list-style-type:none;
