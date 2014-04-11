@@ -21,6 +21,7 @@ body{
 	background-color:#CE4718;
 }
 ul{
+	display:none;
 	text-decoration:none;
 	margin:0px;
 	padding:0px;
