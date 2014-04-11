@@ -50,7 +50,8 @@ ul li a{
 	text-decoration:none;
 	text-transform:uppercase;
 	text-align:center;
-	font-family:AbelRegular;
+	font-family:'AbelRegular';
+	vertical-align:bottom;
 	color:#FFFFFF;
 	font-size:19px;
 	width:122px;
