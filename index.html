@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>github</title>
-  </head>
-  <body>
-    <h1>Hello world!</h1>
-    <p>hello</p>
-  </body>
+<head>
+<style>
+body
+{
+background-color:#d0e4fe;
+}
+h1
+{
+color:orange;
+text-align:center;
+}
+p
+{
+font-family:"Tahoma";
+font-size:20px;
+}
+</style>
+<script type="text/javascript">
+function express(){
+    alert("bonjour à tous et hello world".replace(/[\s]/g,"-"));
+    alert("#F0000F".match(/[0-9A-F]{2}/g));
+    alert("bisrepetitisbisetre".match(/(bis)(re)[a-z]+\1[a-z]+\2/));
+    alert("tu as dit 'bonjour' en arrivant".replace(/^.*'([^']*)'.*$/,"'$1'"));
+    return true;
+}
+function time(){
+    var temps = new Date();
+    var annee = temps.getFullYear();
+    var mois = temps.getMonth() + 1;
+    var jour = temps.getDate();
+    alert("Nous sommes le "+jour+"/"+mois+"/"+annee);
+    
+    var absolu_maint = temps.getTime();
+    var absolu_ensui = absolu_maint + (100*24*60*60*1000);
+    
+    temps.setTime(absolu_ensui); <!--Hello World change time-->
+    
+    var annee = temps.getFullYear();
+    var mois = temps.getMonth() + 1;
+    var jour = temps.getDate();
+    alert("dans 100 jours nous serons le "+jour+"/"+mois+"/"+annee);
+}
+function checkInput(){
+    for(i=0;i<document.forms[0].elements.length-2;i++){
+        alert(i+" "+document.forms[0].elements[i].value);
+        if(document.forms[0].elements[i].value == ""){
+            alert("Le champ" + i + "n'est pas rempli!");
+            document.forms[0].elements[i].focus();
+        }
+    }
+    return true;
+}
+function reg(){
+    document.write("<h2>SORT DE 'le chien et le chat et le chevel et le reste'.match(/( .. ).*\1.*\1/g)<h2>");
+    document.write("le chien et le chat et le cheval et le reste".match(/( .. ).*\1.*\1/g));
+    document.write("<h2>EXPLIQUER LE RESULTAT ET L'EFFET de l'option g</h2><br />");
+    document.write("<h2>PROGRAMME PLUS DETAILLE (comparer è l'effet de g ci-dessus):</h2>");
+    
+    var chaine=" le chien et le chat et le cheval et le reste";
+    var modele =/( .. )(.*)\1(.*)\1(.*)/;
+    var ind=0;var totalind=0;
+    var tabres=new Array();
+    do{
+        tabres=chaine.match(modele);
+        if(tabres!=null){
+            ind=tabres.index
+            tatalind=totalind+ind;
+            document.write("<br /> MATCH DEPUIS "+totalind+" DONNE : "+tabres);
+            chaine=chaine.substring(ind+3);
+            document.write("<br />"+ind+3 + chaine+"<br />");
+            totalind=totalind+3;
+        }
+    }while(tabres!=null);
+    document.write("<br /><br /><br />");
+    document.write('<h2> AUTRE EXEMPLE () et eval : ON DONNE : + ((4+5)*(6+7)-6)*8 </h2>');
+    document.write("PARENTHESE + EXTERNE" + "((4+5)*(6+7)-6)*8".match(/\(.*\)/));
+    document.write("<br />");
+    document.write("PARENTHESE + INTERNES" + "((4+5)*(6+7)-6)*8".match(/\([^()]*\)/g));
+    document.write("<br /> EVAL EINTERNES"+"((4+5)*(6+7)-6)*8".replace(/\([^()]*\)/g,function(tout){return eval(tout)}));
+    return false;//*/
+}
+
+</script>
+</head>
+
+<body onLoad="express();">
+
+<h1 id="H2">CSS example!</h1>
+<p>This is a paragraph.</p>
+<form onSubmit="return checkInput();">
+    Champ 1: <input size="30" /><br />
+    Champ 2: <input size="30" /><br />
+    Champ 3: <input size="30" /><br />
+    <input type="submit" />
+</form>
+
+</body>
 </html>
